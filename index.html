@@ -16,6 +16,15 @@
         altFormat: "F j, Y",
         dateFormat: "Y-m-d",
       });
+      destinationSelect.addEventListener('change', function() {
+        if (this.value === 'International') {
+          countryField.style.display = 'block';
+          document.getElementById('country').setAttribute('required', '');
+        } else {
+          countryField.style.display = 'none';
+          document.getElementById('country').removeAttribute('required');
+        }
+      });
     });
   </script>
 </head>
@@ -40,9 +49,10 @@
     <section class="content" id="about">
       <h2>About Us</h2>
       <p>Established on January 16, 2019, Gold Corner Travel and Tours is a dedicated travel agency based in Ilog, Taal, Batangas, Philippines. We specialize in providing unforgettable travel experiences both domestically and internationally. Whether you're exploring the beautiful islands of the Philippines or venturing abroad, we're here to make your journey smooth, safe, and memorable. Our business is primarily conducted online, allowing clients to plan and book their travels with ease and convenience.</p>
-      <br><h3>Mission</h3>
       <p>Gold Corner Travel & Tours officially started operations on January 16, 2019. Owned by the Adame family, the agency was founded on a vision of excellence, with a commitment to deliver outstanding travel services while preparing for a secure future. As overseas Filipino workers (OFWs), the couple behind the agency understands the value of time and family. Inspired by the mother’s experience in handling travel arrangements, the agency was born out of both necessity and passion.</p>
     <p>Our mission goes beyond profit – at Gold Corner Travel & Tours, our Commitment is our Service. We uphold integrity, fairness, and dedication in every client interaction. We aim to provide a travel experience that’s not only seamless, but also sincere and memorable.</p>
+      <br><h3>Mission</h3>
+      
     <br>  
     <h3>Vision</h3>
       <p>To become one of the most trusted and leading travel agencies in the Philippines and beyond – recognized for our personalized approach, exceptional service quality, and deep commitment to helping individuals and families create meaningful and memorable travel experiences. We strive to continuously grow while staying grounded in the values that inspired our journey.</p>
@@ -102,6 +112,10 @@
             <option value="Philippines">Philippines</option>
             <option value="International">International</option>
           </select>
+          <div id="country-field">
+            <label for="country">Country</label>
+            <input type="text" id="country" name="Country" placeholder="Enter destination country">
+          </div>
 
           
         </div>
